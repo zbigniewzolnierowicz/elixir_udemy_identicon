@@ -21,7 +21,7 @@ defmodule Identicon do
     %Identicon.Image{hex: hex} = image
   ) do
     [r, g, b | _tail] = hex
-    %Identicon.Image{image | color: %Identicon.Color{r: r, g: g, b: b}}
+    %Identicon.Image{image | color: :egd.color({r, g, b})}
   end
 
   def build_grid(
